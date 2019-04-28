@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def n2w(number):
 	words = ''
 	NumWord = \
@@ -39,46 +38,44 @@ def n2w(number):
 		if number < 100:
 			rem = number % 10
 			number -= rem
-			word = n2w(rem)	
+			word = n2w(rem)
 			word = n2w(number) + " " + word
 		elif number < 1000:
 			rem = number % 100
 			number //= 100
 			if rem > 0:
-				word = n2w(rem)	
+				word = n2w(rem)
 			word = n2w(number) + " hundred " + word
 
 		elif number < 1000000: #Less than one million
 			rem = number % 1000
 			number //= 1000
 			if rem > 0:
-				word = n2w(rem)	
+				word = n2w(rem)
 			word = n2w(number) + " thousand " + word
-		
+
 		elif number < 1000000000: #Less than one billion
 			rem = number % 1000000
 			number //= 1000000
 			if rem > 0:
-				word = n2w(rem)	
+				word = n2w(rem)
 			word = n2w(number) + " million " + word
-		
+
 		elif number < 1000000000000: #Less than one trillion
 			rem = number % 1000000000
 			number //= 1000000
 			if rem > 0:
-				word = n2w(rem)	
+				word = n2w(rem)
 			word = n2w(number) + " billion " + word
 	else:
 		return word
-	
+
 	return word
 
-while True:	
-	number_string = input("Enter a number (q to quit) : ")
-	if number_string == 'q' or number_string == 'Q':
-		break
-
-	number  = int(number_string)
-
-	print(n2w(number))
-
+if __name__ == "__main__":
+	while True:
+		number_string = input("Enter a number (q to quit) : ")
+		if number_string == 'q' or number_string == 'Q':
+			break
+		number  = int(number_string)
+		print(n2w(number))
